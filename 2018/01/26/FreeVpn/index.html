@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="free,vpn," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="superbeyone" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Free VPN">
+<meta name="keywords" content="free,vpn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Free VPN">
+<meta property="og:url" content="http://superbeyone.github.io/2018/01/26/FreeVpn/index.html">
+<meta property="og:site_name" content="superbeyone">
+<meta property="og:description" content="Free VPN">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-26T12:46:50.336Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free VPN">
+<meta name="twitter:description" content="Free VPN">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://superbeyone.github.io/2018/01/26/FreeVpn/"/>
+
+
+
+
+
+
+  <title>Free VPN | superbeyone</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/superbeyone"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">superbeyone</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+     <div class="bg_content">
+      <canvas id="canvas"></canvas>
+ </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://superbeyone.github.io/2018/01/26/FreeVpn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="superbeyone">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="superbeyone">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Free VPN</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-26T20:01:05+08:00">
+                2018-01-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/科学上网/" itemprop="url" rel="index">
+                    <span itemprop="name">科学上网</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/26/FreeVpn/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/01/26/FreeVpn/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Free-VPN"><a href="#Free-VPN" class="headerlink" title="Free VPN"></a>Free VPN</h2><a id="more"></a>
+<p>The following VPN services have a free mode, but remember that somebody has to pay for the bandwidth, hardware and maintenance.</p>
+<p>One way or another they will get their money, mostly by trying to get you to upgrade limiting what you can do, for example, no video streaming or P2P. Other providers will show advertisements, and one or two could be a scam logging username and passwords. To ward off fraud it is best to stick with VPN companies that have been around for a long time, tell you who they are and how they make their money.</p>
+<h3 id="Unlimited-band-width-free-VPN"><a href="#Unlimited-band-width-free-VPN" class="headerlink" title="Unlimited band width free VPN"></a>Unlimited band width free VPN</h3><h4 id="VPNBook"><a href="#VPNBook" class="headerlink" title="VPNBook"></a>VPNBook</h4><p><a href="http://www.vpnbook.com/" target="_blank" rel="noopener">VPNBook</a>: Free VPN provider with servers in the USA, UK and Romania. You can choose PPTP for mobile devices or the more secure OpenVPN protocol. Their website contains a username and password that you will need to log into the VPN, it changes daily and you have to visit again to find out the new login credentials.</p>
+<h4 id="ShellFire-VPN"><a href="#ShellFire-VPN" class="headerlink" title="ShellFire VPN"></a>ShellFire VPN</h4><p><a href="https://www.shellfire.net/?sAction=Pricing" target="_blank" rel="noopener">ShellFire VPN</a>: Unlimited bandwidth with a speed limit of 1Mbps, this is more than enough to browse the Internet, you should be able to stream video too as long as it is not in high definition. The free option gives you access to servers in the US and Germany, if you wish to have more bandwidth and servers you will have to upgrade.</p>
+<h4 id="WifiProtector"><a href="#WifiProtector" class="headerlink" title="WifiProtector"></a>WifiProtector</h4><p><a href="http://wifiprotector.com/" target="_blank" rel="noopener">WifiProtector</a>: The free version of this VPN will ask you if you want to install adaware, you can skip the step, make sure to read everything. You will also be shown advertisements as you surf the Internet, this is how the company pays for the free VPN service they provide to you.</p>
+<h4 id="HotSpotShield"><a href="#HotSpotShield" class="headerlink" title="HotSpotShield"></a>HotSpotShield</h4><p><a href="http://www.hotspotshield.com/" target="_blank" rel="noopener">HotSpotShield</a>: One of the most popular VPN services in the world. It gives you a USA computer IP able to stream online video. There is no bandwidth limit but you will be shown advertisements that pay for the service.</p>
+<h4 id="Betternet"><a href="#Betternet" class="headerlink" title="Betternet"></a>Betternet</h4><p><a href="https://www.betternet.co/" target="_blank" rel="noopener">Betternet</a>: Provider with no bandwidth limit or restrictions of any kind, the company has a transparency report with income and expenses in their website and they disclose that the free VPN is funded with the installation of free apps, in exchange for this you will not be shown advertisements and no data will be sold.</p>
+<h4 id="VPNGate"><a href="#VPNGate" class="headerlink" title="VPNGate"></a>VPNGate</h4><p><a href="http://www.vpngate.net/en/" target="_blank" rel="noopener">VPNGate</a>: A network of P2P volunteer run nodes, coordinated by the University of Tsukuba in Japan, their aim is to help people bypass ISP censorship. You can choose one of the dozens of available countries but you have no way to know who is running the node and if they are looking at what you do or not.</p>
+<h4 id="LimitlessVPN"><a href="#LimitlessVPN" class="headerlink" title="LimitlessVPN"></a>LimitlessVPN</h4><p><a href="https://limitlessvpn.com/" target="_blank" rel="noopener">LimitlessVPN</a>: Company offers free VPN with unlimited bandwidth in exchange for you allowing them to mine Bitcoins in your computer. According to them the use very little processing power.</p>
+<h4 id="SpotFlux"><a href="#SpotFlux" class="headerlink" title="SpotFlux"></a>SpotFlux</h4><p><a href="http://www.spotflux.com/" target="_blank" rel="noopener">SpotFlux</a>: Ad supported USA based VPN giving you a USA computer IP without any speed limit and able to stream online video. Websites you visit are automatically scanned for malware.</p>
+<h4 id="UltraSurf"><a href="#UltraSurf" class="headerlink" title="UltraSurf"></a>UltraSurf</h4><p><a href="http://ultrasurf.us/" target="_blank" rel="noopener">UltraSurf</a>: Portable free VPN service and software to help people circumvent ISP censorship. It only runs in Windows Internet Explorer, they have a separate Firefox browser addon download.</p>
+<h4 id="FreeVPN-me"><a href="#FreeVPN-me" class="headerlink" title="FreeVPN.me"></a>FreeVPN.me</h4><p><a href="https://freevpn.me/accounts/" target="_blank" rel="noopener">FreeVPN.me</a>: New free VPN provider that claims they don’t log VPN usage, allow torrents and have unlimited bandwidth. When something seems too good to be truth, be cautious.</p>
+<h4 id="ProtonVPN"><a href="#ProtonVPN" class="headerlink" title="ProtonVPN"></a>ProtonVPN</h4><p><a href="https://protonvpn.com/" target="_blank" rel="noopener">ProtonVPN</a>: No logs VPN with no bandwidth limit, the constraints of this free VPN are that speed is low and only three countries are available. There is the possibility of paying for it and getting many more features.</p>
+<h3 id="Free-VPN-limited-by-bandwidth"><a href="#Free-VPN-limited-by-bandwidth" class="headerlink" title="Free VPN limited by bandwidth"></a>Free VPN limited by bandwidth</h3><h4 id="Faceless"><a href="#Faceless" class="headerlink" title="Faceless"></a>Faceless</h4><p><a href="http://faceless.me/" target="_blank" rel="noopener">Faceless</a>: Free VPN version gives you 2GB bandwidth a month, with limited choice of servers and speed but as secure as their paid for version, with no logs kept and the same level of encryption.</p>
+<h4 id="Traceless"><a href="#Traceless" class="headerlink" title="Traceless"></a>Traceless</h4><p><a href="https://traceless.me/" target="_blank" rel="noopener">Traceless</a>: Zero logs VPN provider in Germany that offers 5GB/month for free using their Dutch or German server. The paid plan gives you access to more servers and unlimited bandwidth.</p>
+<h4 id="WindScribe"><a href="#WindScribe" class="headerlink" title="WindScribe"></a>WindScribe</h4><p><a href="https://windscribe.com/" target="_blank" rel="noopener">WindScribe</a>: Freemium no logs VPN service based in Canada, this is a new company currently running a promotion offering 10GB/month for free, at some point in the future the free VPN will be reduced to 2GB/month.</p>
+<h4 id="IDcloak"><a href="#IDcloak" class="headerlink" title="IDcloak"></a>IDcloak</h4><p><a href="http://www.idcloak.com/vpn-proxy/vpn-service.html" target="_blank" rel="noopener">IDcloak</a>: They give you 256MB of daily usage for free with no advertisements, with the hope that you will like their services an upgrade to a paid for unlimited bandwidth package.</p>
+<h4 id="ZPN-im"><a href="#ZPN-im" class="headerlink" title="ZPN.im"></a>ZPN.im</h4><p><a href="https://zpn.im/" target="_blank" rel="noopener">ZPN.im</a>: Provider offers 10GB/month for free in 5 locations, no P2P allowed. There are premium plans with more servers and unlimited bandwidth, this provider has an extensive VPN network, and they claim they don’t log traffic but there is no mention about what they do with connection logs.</p>
+<h4 id="SecurityKiss"><a href="#SecurityKiss" class="headerlink" title="SecurityKiss"></a>SecurityKiss</h4><p><a href="http://www.securitykiss.com/" target="_blank" rel="noopener">SecurityKiss</a>: Ireland based VPN provider giving you 300MB daily usage with no advertisements or speed limit. They keep VPN logs for ten days to stop abuse.</p>
+<h4 id="TunnelBear"><a href="#TunnelBear" class="headerlink" title="TunnelBear"></a>TunnelBear</h4><p><a href="https://www.tunnelbear.com/" target="_blank" rel="noopener">TunnelBear</a>: VPN service offers 500MB of free bandwidth every month, this can be extended with an extra 1GB if you Tweet about the company.</p>
+<h4 id="SumRando"><a href="#SumRando" class="headerlink" title="SumRando"></a>SumRando</h4><p><a href="https://www.sumrando.com/" target="_blank" rel="noopener">SumRando</a>: South African based VPN company offering 1GB/month of free bandwidth funded with advertisements. There is the option to pay to get rid of adverts and increase the available bandwidth.</p>
+<h4 id="Hide-me"><a href="#Hide-me" class="headerlink" title="Hide.me"></a>Hide.me</h4><p><a href="https://hide.me/" target="_blank" rel="noopener">Hide.me</a>: Free VPN service gives you 2GB/month of available bandwidth in two locations with speed only allocated if paying customers do not need that capacity.</p>
+<h4 id="TorVPN"><a href="#TorVPN" class="headerlink" title="TorVPN"></a>TorVPN</h4><p><a href="http://torvpn.com/" target="_blank" rel="noopener">TorVPN</a>: Account will be erased if not used for one week, there is a 1GB/month bandwidth limit and the free VPN blocks websites like Paypal and eBay to stop fraud.</p>
+<h4 id="Hideman"><a href="#Hideman" class="headerlink" title="Hideman"></a>Hideman</h4><p><a href="http://www.hideman.net/" target="_blank" rel="noopener">Hideman</a>: VPN service giving you free 2GB/month a week of usage, the company does not keep logs for paying users but for free users they keep two weeks of data transfer logs, free version does not have USA or UK node.</p>
+<h3 id="Free-VPN-limited-by-time"><a href="#Free-VPN-limited-by-time" class="headerlink" title="Free VPN limited by time"></a>Free VPN limited by time</h3><h4 id="CyberGhostVPN"><a href="#CyberGhostVPN" class="headerlink" title="CyberGhostVPN"></a>CyberGhostVPN</h4><p><a href="http://www.cyberghostvpn.com" target="_blank" rel="noopener">CyberGhostVPN</a>: The free version has unlimited bandwidth but it disconnects every 3 hours and you might not be able to use the free VPN to stream video as highly demanded locations like the USA and UK are not always available.</p>
+<h4 id="VPNReactor"><a href="#VPNReactor" class="headerlink" title="VPNReactor"></a>VPNReactor</h4><p><a href="http://www.vpnreactor.com/" target="_blank" rel="noopener">VPNReactor</a>: USA based VPN provider giving you free daily 30 minutes access, after that the VPN disconnects and you have to wait 30 minutes before you can reconnect. Once a month you are also sent a confirmation email to corroborate that you still want to use their services.</p>
+<h4 id="WormholeVPN"><a href="#WormholeVPN" class="headerlink" title="WormholeVPN"></a>WormholeVPN</h4><p><a href="https://wormholevpn.net/" target="_blank" rel="noopener">WormholeVPN</a>: VPN service with servers in the US and Asia, the free version expires after 2 days, after which time you have to renew the account, terms and conditions indicate that renewal can be done indefinetely.</p>
+<h3 id="Free-VPN-for-iOS-and-Android"><a href="#Free-VPN-for-iOS-and-Android" class="headerlink" title="Free VPN for iOS and Android"></a>Free VPN for iOS and Android</h3><h4 id="Tenta-Browser"><a href="#Tenta-Browser" class="headerlink" title="Tenta Browser"></a>Tenta Browser</h4><p><a href="https://tenta.com/" target="_blank" rel="noopener">Tenta Browser</a>: Currently only for Android (other platforms to follow). PIN protected privacy browser with a free unlimited built-in VPN, Incognito browsing and encrypted visited pages storage.</p>
+<h4 id="Onavo"><a href="#Onavo" class="headerlink" title="Onavo"></a>Onavo</h4><p><a href="http://www.onavo.com/" target="_blank" rel="noopener">Onavo</a>: This mobile VPN is free but you have to agree to have your data and app usage analysed. There is no clear information about how the product is funded.</p>
+<h4 id="Opera-VPN"><a href="#Opera-VPN" class="headerlink" title="Opera VPN"></a>Opera VPN</h4><p><a href="http://www.opera.com/apps" target="_blank" rel="noopener">Opera VPN</a>: From Opera browser developers, this app for Android and iPhone provides you with a free unlimited bandwidth VPN. Just be aware that the logging policy is not clear, but if you are not concerned about logs, this is a good smartphone VPN.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+          
+      </div>
+    
+
+    
+
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/free/" rel="tag"><i class="fa fa-tag"></i> free</a>
+          
+            <a href="/tags/vpn/" rel="tag"><i class="fa fa-tag"></i> vpn</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/26/c3p0连接池的使用/" rel="next" title="c3p0连接池">
+                <i class="fa fa-chevron-left"></i> c3p0连接池
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="hypercomments_widget"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+ 
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="superbeyone" />
+            
+              <p class="site-author-name" itemprop="name">superbeyone</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/superbeyone" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:superbeyone@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/superbeyone" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/superbeyone" target="_blank" title="FaceBook">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FaceBook</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com/superbeyone" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Free-VPN"><span class="nav-number">1.</span> <span class="nav-text">Free VPN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unlimited-band-width-free-VPN"><span class="nav-number">1.1.</span> <span class="nav-text">Unlimited band width free VPN</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#VPNBook"><span class="nav-number">1.1.1.</span> <span class="nav-text">VPNBook</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ShellFire-VPN"><span class="nav-number">1.1.2.</span> <span class="nav-text">ShellFire VPN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WifiProtector"><span class="nav-number">1.1.3.</span> <span class="nav-text">WifiProtector</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HotSpotShield"><span class="nav-number">1.1.4.</span> <span class="nav-text">HotSpotShield</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Betternet"><span class="nav-number">1.1.5.</span> <span class="nav-text">Betternet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VPNGate"><span class="nav-number">1.1.6.</span> <span class="nav-text">VPNGate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LimitlessVPN"><span class="nav-number">1.1.7.</span> <span class="nav-text">LimitlessVPN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpotFlux"><span class="nav-number">1.1.8.</span> <span class="nav-text">SpotFlux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UltraSurf"><span class="nav-number">1.1.9.</span> <span class="nav-text">UltraSurf</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FreeVPN-me"><span class="nav-number">1.1.10.</span> <span class="nav-text">FreeVPN.me</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ProtonVPN"><span class="nav-number">1.1.11.</span> <span class="nav-text">ProtonVPN</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Free-VPN-limited-by-bandwidth"><span class="nav-number">1.2.</span> <span class="nav-text">Free VPN limited by bandwidth</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Faceless"><span class="nav-number">1.2.1.</span> <span class="nav-text">Faceless</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Traceless"><span class="nav-number">1.2.2.</span> <span class="nav-text">Traceless</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WindScribe"><span class="nav-number">1.2.3.</span> <span class="nav-text">WindScribe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IDcloak"><span class="nav-number">1.2.4.</span> <span class="nav-text">IDcloak</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ZPN-im"><span class="nav-number">1.2.5.</span> <span class="nav-text">ZPN.im</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SecurityKiss"><span class="nav-number">1.2.6.</span> <span class="nav-text">SecurityKiss</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TunnelBear"><span class="nav-number">1.2.7.</span> <span class="nav-text">TunnelBear</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SumRando"><span class="nav-number">1.2.8.</span> <span class="nav-text">SumRando</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hide-me"><span class="nav-number">1.2.9.</span> <span class="nav-text">Hide.me</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TorVPN"><span class="nav-number">1.2.10.</span> <span class="nav-text">TorVPN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hideman"><span class="nav-number">1.2.11.</span> <span class="nav-text">Hideman</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Free-VPN-limited-by-time"><span class="nav-number">1.3.</span> <span class="nav-text">Free VPN limited by time</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CyberGhostVPN"><span class="nav-number">1.3.1.</span> <span class="nav-text">CyberGhostVPN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VPNReactor"><span class="nav-number">1.3.2.</span> <span class="nav-text">VPNReactor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WormholeVPN"><span class="nav-number">1.3.3.</span> <span class="nav-text">WormholeVPN</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Free-VPN-for-iOS-and-Android"><span class="nav-number">1.4.</span> <span class="nav-text">Free VPN for iOS and Android</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Tenta-Browser"><span class="nav-number">1.4.1.</span> <span class="nav-text">Tenta Browser</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Onavo"><span class="nav-number">1.4.2.</span> <span class="nav-text">Onavo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Opera-VPN"><span class="nav-number">1.4.3.</span> <span class="nav-text">Opera VPN</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+
+
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+
+    <i class="fa fa-user"></i>
+  </span>
+  <a href="http://blog.sina.com.cn/superbeyone" target="blank"><span class="author" itemprop="copyrightHolder">[superbeyone]</span></a>
+
+  
+  &nbsp;&nbsp;
+    <div class="powered-by">
+      <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+        本站访客数:&nbsp;<span id="busuanzi_value_site_uv"></span>
+      </span>
+    </div>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100473, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100473, xid: "2018/01/26/FreeVpn/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100473/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+<script type="text/javascript">
+   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+   function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+   function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+   var Circle = function () {
+      function Circle(x, y) {
+           _classCallCheck(this, Circle);
+           this.x = x;
+           this.y = y;
+           this.r = Math.random() * 10;
+           this._mx = Math.random();
+           this._my = Math.random();
+       }
+      _createClass(Circle, [{
+           key: 'drawCircle',
+           value: function drawCircle(ctx) {
+               ctx.beginPath();
+               //arc() 方法使用一个中心点和半径，为一个画布的当前子路径添加一条弧。
+               ctx.arc(this.x, this.y, this.r, 0, 360);
+               ctx.closePath();
+               ctx.fillStyle = 'rgba(204, 204, 204, 0.3)';
+               ctx.fill();
+           }
+       }, {
+           key: 'drawLine',
+           value: function drawLine(ctx, _circle) {
+               var dx = this.x - _circle.x;
+               var dy = this.y - _circle.y;
+               var d = Math.sqrt(dx * dx + dy * dy);
+               if (d < 150) {
+                   ctx.beginPath();
+                   ctx.moveTo(this.x, this.y); //起始点
+                   ctx.lineTo(_circle.x, _circle.y); //终点
+                   ctx.closePath();
+                   ctx.strokeStyle = 'rgba(204, 204, 204, 0.3)';
+                   ctx.stroke();
+               }
+           }
+       }, {
+           key: 'move',
+           value: function move(w, h) {
+               this._mx = this.x < w && this.x > 0 ? this._mx : -this._mx;
+               this._my = this.y < h && this.y > 0 ? this._my : -this._my;
+               this.x += this._mx / 2;
+               this.y += this._my / 2;
+           }
+       }]);
+       return Circle;
+   }();
+   var currentCirle = function (_Circle) {
+       _inherits(currentCirle, _Circle);
+       function currentCirle(x, y) {
+           _classCallCheck(this, currentCirle);
+           return _possibleConstructorReturn(this, (currentCirle.__proto__ || Object.getPrototypeOf(currentCirle)).call(this, x, y));
+       }
+       _createClass(currentCirle, [{
+           key: 'drawCircle',
+           value: function drawCircle(ctx) {
+               ctx.beginPath();
+               //this.r = (this.r < 14 && this.r > 1) ? this.r + (Math.random() * 2 - 1) : 2;
+               this.r = 8;
+               ctx.arc(this.x, this.y, this.r, 0, 360);
+               ctx.closePath();
+               //ctx.fillStyle = 'rgba(0,0,0,' + (parseInt(Math.random() * 100) / 100) + ')'
+               ctx.fillStyle = 'rgba(255, 77, 54, 0.6)';
+               ctx.fill();
+           }
+       }]);
+       return currentCirle;
+   }(Circle);
+   window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+   var canvas = document.getElementById('canvas');
+   var ctx = canvas.getContext('2d');
+   var w = canvas.width = canvas.offsetWidth;
+   var h = canvas.height = canvas.offsetHeight;
+   var circles = [];
+   var current_circle = new currentCirle(0, 0);
+   var draw = function draw() {
+       ctx.clearRect(0, 0, w, h);
+       for (var i = 0; i < circles.length; i++) {
+           circles[i].move(w, h);
+           circles[i].drawCircle(ctx);
+           for (j = i + 1; j < circles.length; j++) {
+               circles[i].drawLine(ctx, circles[j]);
+           }
+       }
+       if (current_circle.x) {
+           current_circle.drawCircle(ctx);
+           for (var k = 1; k < circles.length; k++) {
+               current_circle.drawLine(ctx, circles[k]);
+           }
+       }
+       requestAnimationFrame(draw);
+   };
+   var init = function init(num) {
+       for (var i = 0; i < num; i++) {
+           circles.push(new Circle(Math.random() * w, Math.random() * h));
+       }
+       draw();
+   };
+   window.addEventListener('load', init(60));
+   window.onmousemove = function (e) {
+       e = e || window.event;
+       current_circle.x = e.clientX;
+       current_circle.y = e.clientY;
+   };
+   window.onmouseout = function () {
+       current_circle.x = null;
+       current_circle.y = null;
+   };
+</script>
