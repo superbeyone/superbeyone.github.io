@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Vue,学习笔记,前端开发," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="superbeyone" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="vue常用指令及入门">
+<meta name="keywords" content="Vue,学习笔记,前端开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue学习笔记第一天">
+<meta property="og:url" content="http://superbeyone.info/Vue学习笔记第一天.html">
+<meta property="og:site_name" content="superbeyone">
+<meta property="og:description" content="vue常用指令及入门">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-13T13:42:47.554Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue学习笔记第一天">
+<meta name="twitter:description" content="vue常用指令及入门">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://superbeyone.info/Vue学习笔记第一天.html"/>
+
+
+
+
+
+
+  <title>Vue学习笔记第一天 | superbeyone</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/superbeyone"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">superbeyone</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+     <div class="bg_content">
+      <canvas id="canvas"></canvas>
+ </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://superbeyone.info/Vue学习笔记第一天.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="superbeyone">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="superbeyone">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Vue学习笔记第一天</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T22:28:34+08:00">
+                2018-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Vue学习笔记第一天.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="Vue学习笔记第一天.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="vue常用指令及入门"><a href="#vue常用指令及入门" class="headerlink" title="vue常用指令及入门"></a>vue常用指令及入门</h2><a id="more"></a>
+<h3 id="开车啦，快上车"><a href="#开车啦，快上车" class="headerlink" title="开车啦，快上车~~~"></a>开车啦，快上车~~~</h3><h4 id="上车准备"><a href="#上车准备" class="headerlink" title="上车准备"></a>上车准备</h4><p> 1.后端代码的抽取感觉还可以，前端代码抽取懵，关于哪个需要依赖、注入，哪个不需要依赖、注入，不懂？ </p>
+<pre><code>输入服务 是需要使用的时候
+
+配置期  config -&gt; 可以注入供应商服务对象，对于具体服务进行配置
+运行期  非config都算是运行期
+    service/factory(通过return 返回任意类型对象)/controller/derective/filter
+以上都可以用来注入服务对象（service/factory）
+如何区分是否能依赖注入
+    形参名基本以$开头
+    //根据顺序来的
+    link:function(scope,element,attrs)
+</code></pre><p> 2.自己建了一个服务器，数据库，可是这个项目还是不知道从哪开始敲起<br>        看需求有哪些页面，配置路由显示页面，根据API接口完成页面上的动态数据交互<br>3.webpack-dev-server 再讲一下吧，还是不太懂<br>    工具，在学校的时候，要掌握的东西是重点学习的东西，而不是工具<br>    在企业开发中，遇上了相关问题，再去看看别的东西<br>    让大家不用去关注除了主核心以外的东西<br>    –inline –hot –open –port 9999</p>
+<p> 老师,能不能给点时间练练<br>     保留最终解释权<br>  黑马岳父, angular飞晕了, node飞丢了, vue稍微稳点飞, vue是最后的杀手锏了, 也是唯一能吹牛的资本了</p>
+<pre><code>1:主要学习的是VUE，快速进入VUE让大家体会VUE的使用
+2:webpack前端构建构建，前期铺垫基本使用，后面看到不晕
+3:在做完项目以后，模拟项目开发的真实打包，区分打包的意义所在(webpack)
+</code></pre><h4 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h4><ul>
+<li>webpack属性配置</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry:&#123; main是默认入口,也可以是多入口</span><br><span class="line">        main:<span class="string">'./src/main.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    出口</span><br><span class="line">    output:&#123;</span><br><span class="line">        filename:<span class="string">'./build.js'</span>, 指定js文件</span><br><span class="line">        path: path.join(__dirname,<span class="string">'..'</span>,<span class="string">'dist'</span>,)          最好是绝对路径</span><br><span class="line">        代表当前目录的上一级的dist</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">module</span>:&#123;</span><br><span class="line">        一样的功能rules:   webpack2.x之后新加的</span><br><span class="line">        loaders:[       <span class="built_in">require</span>(<span class="string">'./a.css||./a.js'</span>)</span><br><span class="line">            &#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,</span><br><span class="line">             loader:<span class="string">'style-loader!css-loader'</span>,</span><br><span class="line">             顺序是反过来的<span class="number">2</span>!<span class="number">1</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">             test:<span class="regexp">/\.(jpg|svg)$/</span>,</span><br><span class="line">             loader:<span class="string">'url-loader?limit=4096&amp;name=[name].[ext]'</span>,</span><br><span class="line">             顺序是反过来的<span class="number">2</span>!<span class="number">1</span> </span><br><span class="line">             [name].[ext]内置提供的，因为本身是先读这个文件</span><br><span class="line">             options:&#123;</span><br><span class="line">                limit:<span class="number">4096</span>,</span><br><span class="line">                name:<span class="string">'[name].[ext]'</span></span><br><span class="line">             &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    plugins:[</span><br><span class="line">        插件的执行顺序是依次执行的</span><br><span class="line">        <span class="keyword">new</span> htmlWebpackPlugin(&#123;</span><br><span class="line">            template:<span class="string">'./src/index.html'</span>,</span><br><span class="line">            &#125;)</span><br><span class="line">            将src下的template属性描述的文件根据当前配置的output.path，将文件移动到该目录</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="今日重点"><a href="#今日重点" class="headerlink" title="今日重点"></a>今日重点</h4><ul>
+<li>运行起来Vue</li>
+<li>vue常用指令</li>
+<li>组件的使用</li>
+</ul>
+<h3 id="es6"><a href="#es6" class="headerlink" title="es6"></a>es6</h3><hr>
+<h4 id="webpack-ES6的处理"><a href="#webpack-ES6的处理" class="headerlink" title="webpack-ES6的处理"></a>webpack-ES6的处理</h4><ul>
+<li>ES6的模块,vue本身默认支持es6的模块导入导出</li>
+<li>babel<ul>
+<li>babel-loader(内部依赖babel-core)<ul>
+<li>关键字(presets  es2015)</li>
+<li>函数(plugins babel-plugin-transform-runtime)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="ES6中的模块"><a href="#ES6中的模块" class="headerlink" title="ES6中的模块"></a>ES6中的模块</h4><ul>
+<li>默认<ul>
+<li>导入<code>import [,..xxx] [,..from] &#39;./xxx.ext&#39;</code></li>
+<li>导出 <code>export default obj;</code></li>
+</ul>
+</li>
+<li>声明式<ul>
+<li>1导出 <code>export var obj = xxx;</code></li>
+<li>2导出 <code>export var obj2 = {};</code></li>
+<li>3单独导出 <code>export {stu};</code></li>
+<li>导入 <code>import {obj,obj2,stu} from &#39;./xxx.js&#39;;  直接使用obj</code></li>
+</ul>
+</li>
+<li>全体</li>
+<li>默认导出和声明式导入在使用上的区别<ul>
+<li>要注意，声明式导入的时候，必须{名称} 名称要一致（按需导入)</li>
+<li>默认导入，可以随意的使用变量名</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="keyword">default</span>:<span class="string">"我是默认导出的结果"</span>    </span><br><span class="line">        <span class="keyword">import</span> xxx <span class="keyword">from</span> <span class="string">'./cal.js'</span>会获取到整个对象的<span class="keyword">default</span>属性</span><br><span class="line">obj1:<span class="string">"我是声明式导出1"</span></span><br><span class="line">obj2:<span class="string">"我是声明式导出2"</span> </span><br><span class="line">obj3:<span class="string">"我是声明式导出3"</span>     <span class="keyword">import</span> &#123;obj1,obj2&#125;</span><br><span class="line">obj4:<span class="string">"我是声明式导出4"</span></span><br><span class="line">&#125;</span><br><span class="line">    <span class="keyword">import</span> * <span class="keyword">as</span> allObj <span class="keyword">from</span> <span class="string">'./cal.js'</span>;  获取的就是一整个对象</span><br></pre></td></tr></table></figure>
+<ul>
+<li>import 和export一定写在顶级，不要包含在{}内</li>
+</ul>
+<h4 id="ES6中的代码变化"><a href="#ES6中的代码变化" class="headerlink" title="ES6中的代码变化"></a>ES6中的代码变化</h4><ul>
+<li>对象属性的声明 </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'abc'</span>;</span><br><span class="line"><span class="keyword">var</span> person = &#123;name&#125;; 简写-&gt; <span class="keyword">var</span> person = &#123;<span class="attr">name</span>:name&#125;;</span><br><span class="line"></span><br><span class="line">声明函数 </span><br><span class="line"><span class="keyword">var</span> cal = &#123;</span><br><span class="line">    add:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    add2()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    add3:funtion(n1,n2)&#123;</span><br><span class="line">        <span class="keyword">return</span> n1 + n2;</span><br><span class="line">    &#125;,</span><br><span class="line">    add4(n1,n2)&#123;  干掉了<span class="function"><span class="keyword">function</span></span></span><br><span class="line"><span class="function">        <span class="title">return</span> <span class="title">n1</span> + <span class="title">n2</span>;</span></span><br><span class="line"><span class="function">    &#125;</span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>当属性的key和变量的名相同,而要使用变量的值做value,</li>
+<li>就可以简写{name}-&gt;{name:name}</li>
+<li>es6中的函数声明<ul>
+<li>就是干掉了:function    add(){ }</li>
+</ul>
+</li>
+</ul>
+<h4 id="vue单文件方式"><a href="#vue单文件方式" class="headerlink" title="vue单文件方式"></a>vue单文件方式</h4><ul>
+<li>单文件就是以<em>.vue结尾的文件。最终通过webpack也会编译成</em>.js在浏览器运行</li>
+<li>内容： <template></template> + <script></script> + <style></style><ul>
+<li>1:template中只能有一个根节点 2.x</li>
+<li>2:script中  按照 export default {配置} 来写</li>
+<li>3:style中 可以设置scoped属性，让其只在template中生效</li>
+</ul>
+</li>
+</ul>
+<h4 id="以单文件的方式启动"><a href="#以单文件的方式启动" class="headerlink" title="以单文件的方式启动"></a>以单文件的方式启动</h4><ul>
+<li>webpack找人来理解你的单文件代码<ul>
+<li>vue-loader,vue-template-compiler,代码中依赖vue,</li>
+</ul>
+</li>
+<li>启动命令</li>
+<li><code>..\\node_modules\\.bin\\webpack-dev-server --inline --hot --open</code></li>
+</ul>
+<h4 id="vue介绍"><a href="#vue介绍" class="headerlink" title="vue介绍"></a>vue介绍</h4><ul>
+<li>2014年诞生,2013年react,09年angularjs</li>
+<li>作者 尤雨溪</li>
+<li>核心概念:     组件化  双向数据流 (基于ES5中的defineProperty来实现的),IE9才支持</li>
+<li>angular核心： 模块化 双向数据绑定(脏检测:一个数组（$watch）)<ul>
+<li>开发一个登陆的模块，登陆需要显示的头部、底部、中部</li>
+<li>组件:组合起来的一个部件（头部、底部、中部）</li>
+<li><strong>细分代码</strong><ul>
+<li>头部: 页面、样式、动态效果</li>
+<li>代码: template style script</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>框架对比，建议学完vue再看</li>
+<li><a href="https://cn.vuejs.org/v2/guide/comparison.html#React" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/comparison.html#React</a></li>
+</ul>
+<h4 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h4><ul>
+<li>1向：js内存属性发生改变，影响页面的变化</li>
+<li>1向：页面的改变影响js内存属性的改变</li>
+</ul>
+<h4 id="vue中常用的v-指令演示"><a href="#vue中常用的v-指令演示" class="headerlink" title="vue中常用的v-指令演示"></a>vue中常用的v-指令演示</h4><ul>
+<li>常用指令 </li>
+<li>v-text 是元素的innerText只能在双标签中使用</li>
+<li>v-html 是元素的innerHTML，不能包含<!-- –&gt;</li>
+<li>v-if 元素是否移除或者插入</li>
+<li>v-show 元素是否显示或隐藏</li>
+<li>v-model 双向数据绑定，v-bind是单向数据绑定(内存js改变影响页面)</li>
+</ul>
+<h4 id="class结合v-bind使用"><a href="#class结合v-bind使用" class="headerlink" title="class结合v-bind使用"></a>class结合v-bind使用</h4><ul>
+<li>需要根据可变的表达式的结果来给class赋值，就需要用到v-bind:class=”xxx”</li>
+<li>v-bind:属性名=”表达式”，最终表达式运算结束的结果赋值给该属性名<ul>
+<li>简化的写法是: <code>:属性名=&quot;表达式&quot;</code></li>
+</ul>
+</li>
+<li>class:结果的分类<ul>
+<li>一个样式: 返回字符串(三元表达式和key和样式的清单对象)</li>
+<li>多个样式：返回对象(样式做key，true或flase做值)</li>
+</ul>
+</li>
+</ul>
+<h4 id="methods和v-on的使用"><a href="#methods和v-on的使用" class="headerlink" title="methods和v-on的使用"></a>methods和v-on的使用</h4><ul>
+<li>绑定事件的方法<ul>
+<li><code>v-on:事件名=&quot;表达式||函数名&quot;</code></li>
+<li>简写: <code>@事件名=&quot;表达式||函数名&quot;</code></li>
+</ul>
+</li>
+<li>函数名如果没有参数，可以省略()  只给一个函数名称</li>
+<li>声明组件内函数，在export default这个对象的根属性加上methods属性，其是一个对象<ul>
+<li>key 是函数名 值是函数体</li>
+</ul>
+</li>
+<li>在export default这个对象的根属性加上data属性，其是一个函数，返回一个对象<ul>
+<li>对象的属性是我们初始化的变量的名称</li>
+</ul>
+</li>
+<li>凡是在template中使用变量或者函数，不需要加this</li>
+<li>在script中使用就需要加上this</li>
+</ul>
+<h4 id="v-for的使用"><a href="#v-for的使用" class="headerlink" title="v-for的使用"></a>v-for的使用</h4><ul>
+<li>可以使用操作数组 (item,index)</li>
+<li><p>可以使用操作对象 (value,key,index)</p>
+</li>
+<li><p>key 是类似trank by 的一个属性</p>
+</li>
+<li>为的是告诉vue，js中的元素，与页面之间的关联，当识图删除元素的时候，是单个元素的删除而不是正版替换，所以需要关联其关系，设置(必须,性能)  </li>
+<li>2.2.0+ 的版本里，当在组件中使用 v-for 时，key 现在是必须的。</li>
+</ul>
+<h4 id="漂亮的列表"><a href="#漂亮的列表" class="headerlink" title="漂亮的列表"></a>漂亮的列表</h4><h4 id="父子组件使用"><a href="#父子组件使用" class="headerlink" title="父子组件使用"></a>父子组件使用</h4><ul>
+<li>父和子，使用的是父，被用的是子</li>
+<li>父需要声明子组件，引入子组件对象，声明方式如下</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> 子组件对象 <span class="keyword">from</span> <span class="string">'./xxx.vue'</span>;</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">        components:&#123;</span><br><span class="line">            组件名:子组件对象</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>全局组件，使用更为方便，不需要声明，直接用</li>
+<li>在main.js中引入一次，在main.js中使用 <code>vue.component(&#39;组件名&#39;,组件对象);</code></li>
+<li>所有的组件就可以直接通过组件名，使用</li>
+</ul>
+<h4 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h4><ul>
+<li>父组件通过子组件的属性将值进行传递<ul>
+<li>方式有2:<ul>
+<li>常量:  prop1=”常量值”</li>
+<li>变量:  :prop2=”变量名”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>子组件需要声明<ul>
+<li>根属性props:[‘prop1’,’prop2’]</li>
+<li>在页面中直接使用</li>
+<li>在js中应该如何使用prop1？   this.prop1获取</li>
+</ul>
+</li>
+</ul>
+<h4 id="看文档的对象分类"><a href="#看文档的对象分类" class="headerlink" title="看文档的对象分类"></a>看文档的对象分类</h4><ul>
+<li>1:全局的代表Vue.的</li>
+<li>2:实例的代表this.或者new Vue().</li>
+<li>3:选项代表 new Vue() 的参数</li>
+<li>或者 export default里边的属性</li>
+</ul>
+<h4 id="子向父组件通信（vuebus）-扩展"><a href="#子向父组件通信（vuebus）-扩展" class="headerlink" title="子向父组件通信（vuebus）(扩展)"></a>子向父组件通信（vuebus）(扩展)</h4><ul>
+<li>通过new Vue()这样的一个对象，来$on(‘事件名’,fn(prop1,pro2))</li>
+<li>另一个组件引入同一个vuebus,  来$emit(‘事件名’,prop1,pro2)</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<li>-1 : 已经存在node_modules包，已经存在package.json和webpack.config.js文件</li>
+<li>1: 创建index.html,看看其所在文件和webpack.config.js文件中描述的关系</li>
+<li>2: 在index.html div-&gt;id-&gt;app</li>
+<li>3: 创建main.js,看看其所在文件和webpack.config.js文件中描述的关系</li>
+<li>4: 在main.js中引入vue,和相关组件对象</li>
+<li>5: new Vue(选项options) , 目的地el   渲染内容 render:c=&gt;c(App) 渲染App的内容</li>
+<li>6: 编写app.vue <ul>
+<li>template 在2.x以后只能有一个根节点</li>
+<li>script 格式是export default { 选项options}</li>
+<li>style 加上scoped（范围的）之后，样式只对当前模板有效</li>
+</ul>
+</li>
+<li>7: 可能使用组件或者使用函数或者接受参数<ul>
+<li>options(根属性):<ul>
+<li>data 是一个函数,return一个对象</li>
+<li>methods 是一个对象,key是函数名,value是函数体</li>
+<li>components 是一个对象,key是组件名,值是组件对象</li>
+<li>props 是一个数组,元素是多个接受的参数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>8: 套路总结<ul>
+<li>凡是在上边可以使用的东西</li>
+<li>在下边就可以使用，通过this.</li>
+</ul>
+</li>
+<li>9:启动<ul>
+<li>进入到webpack.config.js 和package.json文件同在的目录中启动命令行</li>
+<li>输入: 正在编码:  npm run dev <ul>
+<li>报错: 检查命令所执行的../ 上级,是否存在node_modules目录及相关文件是否存在</li>
+</ul>
+</li>
+<li>输入: 代码编写完毕，提交到公司 :  npm run build</li>
+</ul>
+</li>
+</ul>
+<h4 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h4><h4 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h4><h4 id="vue构建方式"><a href="#vue构建方式" class="headerlink" title="vue构建方式"></a>vue构建方式</h4>--></li></ul>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+          
+      </div>
+    
+
+    
+
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
+          
+            <a href="/tags/学习笔记/" rel="tag"><i class="fa fa-tag"></i> 学习笔记</a>
+          
+            <a href="/tags/前端开发/" rel="tag"><i class="fa fa-tag"></i> 前端开发</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Vue学习笔记第四天.html" rel="next" title="Vue学习笔记第四天">
+                <i class="fa fa-chevron-left"></i> Vue学习笔记第四天
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="hypercomments_widget"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+ 
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="superbeyone" />
+            
+              <p class="site-author-name" itemprop="name">superbeyone</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/superbeyone" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:superbeyone@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/superbeyone" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/superbeyone" target="_blank" title="FaceBook">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FaceBook</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com/superbeyone" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue常用指令及入门"><span class="nav-number">1.</span> <span class="nav-text">vue常用指令及入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开车啦，快上车"><span class="nav-number">1.1.</span> <span class="nav-text">开车啦，快上车~~~</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#上车准备"><span class="nav-number">1.1.1.</span> <span class="nav-text">上车准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复习"><span class="nav-number">1.1.2.</span> <span class="nav-text">复习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#今日重点"><span class="nav-number">1.1.3.</span> <span class="nav-text">今日重点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#es6"><span class="nav-number">1.2.</span> <span class="nav-text">es6</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#webpack-ES6的处理"><span class="nav-number">1.2.1.</span> <span class="nav-text">webpack-ES6的处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6中的模块"><span class="nav-number">1.2.2.</span> <span class="nav-text">ES6中的模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6中的代码变化"><span class="nav-number">1.2.3.</span> <span class="nav-text">ES6中的代码变化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue单文件方式"><span class="nav-number">1.2.4.</span> <span class="nav-text">vue单文件方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以单文件的方式启动"><span class="nav-number">1.2.5.</span> <span class="nav-text">以单文件的方式启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue介绍"><span class="nav-number">1.2.6.</span> <span class="nav-text">vue介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据流"><span class="nav-number">1.2.7.</span> <span class="nav-text">数据流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue中常用的v-指令演示"><span class="nav-number">1.2.8.</span> <span class="nav-text">vue中常用的v-指令演示</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+
+
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+
+    <i class="fa fa-user"></i>
+  </span>
+  <a href="http://blog.sina.com.cn/superbeyone" target="blank"><span class="author" itemprop="copyrightHolder">[superbeyone]</span></a>
+
+  
+  &nbsp;&nbsp;
+    <div class="powered-by">
+      <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+        本站访客数:&nbsp;<span id="busuanzi_value_site_uv"></span>
+      </span>
+    </div>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100567, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100567, xid: "Vue学习笔记第一天.html"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100567/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+<script type="text/javascript">
+   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+   function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+   function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+   var Circle = function () {
+      function Circle(x, y) {
+           _classCallCheck(this, Circle);
+           this.x = x;
+           this.y = y;
+           this.r = Math.random() * 10;
+           this._mx = Math.random();
+           this._my = Math.random();
+       }
+      _createClass(Circle, [{
+           key: 'drawCircle',
+           value: function drawCircle(ctx) {
+               ctx.beginPath();
+               //arc() 方法使用一个中心点和半径，为一个画布的当前子路径添加一条弧。
+               ctx.arc(this.x, this.y, this.r, 0, 360);
+               ctx.closePath();
+               ctx.fillStyle = 'rgba(204, 204, 204, 0.3)';
+               ctx.fill();
+           }
+       }, {
+           key: 'drawLine',
+           value: function drawLine(ctx, _circle) {
+               var dx = this.x - _circle.x;
+               var dy = this.y - _circle.y;
+               var d = Math.sqrt(dx * dx + dy * dy);
+               if (d < 150) {
+                   ctx.beginPath();
+                   ctx.moveTo(this.x, this.y); //起始点
+                   ctx.lineTo(_circle.x, _circle.y); //终点
+                   ctx.closePath();
+                   ctx.strokeStyle = 'rgba(204, 204, 204, 0.3)';
+                   ctx.stroke();
+               }
+           }
+       }, {
+           key: 'move',
+           value: function move(w, h) {
+               this._mx = this.x < w && this.x > 0 ? this._mx : -this._mx;
+               this._my = this.y < h && this.y > 0 ? this._my : -this._my;
+               this.x += this._mx / 2;
+               this.y += this._my / 2;
+           }
+       }]);
+       return Circle;
+   }();
+   var currentCirle = function (_Circle) {
+       _inherits(currentCirle, _Circle);
+       function currentCirle(x, y) {
+           _classCallCheck(this, currentCirle);
+           return _possibleConstructorReturn(this, (currentCirle.__proto__ || Object.getPrototypeOf(currentCirle)).call(this, x, y));
+       }
+       _createClass(currentCirle, [{
+           key: 'drawCircle',
+           value: function drawCircle(ctx) {
+               ctx.beginPath();
+               //this.r = (this.r < 14 && this.r > 1) ? this.r + (Math.random() * 2 - 1) : 2;
+               this.r = 8;
+               ctx.arc(this.x, this.y, this.r, 0, 360);
+               ctx.closePath();
+               //ctx.fillStyle = 'rgba(0,0,0,' + (parseInt(Math.random() * 100) / 100) + ')'
+               ctx.fillStyle = 'rgba(255, 77, 54, 0.6)';
+               ctx.fill();
+           }
+       }]);
+       return currentCirle;
+   }(Circle);
+   window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+   var canvas = document.getElementById('canvas');
+   var ctx = canvas.getContext('2d');
+   var w = canvas.width = canvas.offsetWidth;
+   var h = canvas.height = canvas.offsetHeight;
+   var circles = [];
+   var current_circle = new currentCirle(0, 0);
+   var draw = function draw() {
+       ctx.clearRect(0, 0, w, h);
+       for (var i = 0; i < circles.length; i++) {
+           circles[i].move(w, h);
+           circles[i].drawCircle(ctx);
+           for (j = i + 1; j < circles.length; j++) {
+               circles[i].drawLine(ctx, circles[j]);
+           }
+       }
+       if (current_circle.x) {
+           current_circle.drawCircle(ctx);
+           for (var k = 1; k < circles.length; k++) {
+               current_circle.drawLine(ctx, circles[k]);
+           }
+       }
+       requestAnimationFrame(draw);
+   };
+   var init = function init(num) {
+       for (var i = 0; i < num; i++) {
+           circles.push(new Circle(Math.random() * w, Math.random() * h));
+       }
+       draw();
+   };
+   window.addEventListener('load', init(60));
+   window.onmousemove = function (e) {
+       e = e || window.event;
+       current_circle.x = e.clientX;
+       current_circle.y = e.clientY;
+   };
+   window.onmouseout = function () {
+       current_circle.x = null;
+       current_circle.y = null;
+   };
+</script>
